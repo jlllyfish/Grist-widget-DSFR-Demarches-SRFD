@@ -56,6 +56,7 @@
   .card:hover { background-color: #F6F6F6; }
   .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
   .fr-tag { font-size: .75rem; background: #EEE; padding: 2px 10px; }
+  .fr-tag--blue { background: #E3E3FD; color: #000091; }
   .card-title { color: #000091 !important; font-weight: 700; font-size: 1.1rem; text-decoration: none !important; cursor: pointer; display: inline-block; border-bottom: 2px solid #000091; padding-bottom: 3px; width: fit-content; box-shadow: none !important; background-image: none !important; }
   .card-desc { color: #3A3A3A; font-size: .9rem; line-height: 1.4; flex: 1; }
   .card-meta { display: flex; align-items: center; gap: 6px; font-size: .85rem; color: #3A3A3A; }
@@ -122,6 +123,7 @@ grist.ready({
     { name: "Titre", title: "Titre" },
     { name: "Description", title: "Description" },
     { name: "Type", title: "Type", optional: true },
+    { name: "TypeEtablissement", title: "Type établissement éligible", optional: true },
     { name: "Statut", title: "Statut", optional: true },
     { name: "Unites", title: "Unité", optional: true },
     { name: "Theme", title: "Thematique", optional: true },
@@ -227,6 +229,7 @@ function render() {
     const titre = col(r, "Titre") || "(sans titre)";
     const desc = col(r, "Description") || "";
     const type = col(r, "Type") || "";
+    const typeEtab = col(r, "TypeEtablissement") || "";
     const statut = (col(r, "Statut") || "").toLowerCase();
     const dateOuverture = formatDateFR(col(r, "DateOuverture"));
     const dateLimite = formatDateFR(col(r, "DateLimite"));
@@ -243,6 +246,7 @@ function render() {
       <article class="card">
         <div class="card-tags">
           ${type ? `<span class="fr-tag">${type}</span>` : ""}
+          ${typeEtab ? `<span class="fr-tag fr-tag--blue">${typeEtab}</span>` : ""}
         </div>
         <a class="card-title" href="${lienDN || lien}" target="_blank" rel="noopener">${titre}</a>
         <p class="card-desc">${desc}</p>
