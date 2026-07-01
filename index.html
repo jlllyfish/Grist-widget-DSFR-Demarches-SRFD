@@ -65,6 +65,7 @@
   .badge { font-size: .75rem; font-weight: 600; padding: 2px 10px; border-radius: 2px; }
   .badge--success { background: #B8FEC9; color: #18753C; }
   .badge--error { background: #FFE9E9; color: #CE0500; }
+  .badge--warning { background: #FFECC8; color: #B34000; }
 
   .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
   .card-footer a { color: #000091; font-size: 1.2rem; }
@@ -239,6 +240,7 @@ function render() {
     const statutNorm = statut.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     const badgeClass = statutNorm.includes("ouvert") ? "badge--success"
       : (statutNorm.includes("ferme") || statutNorm.includes("termin") || statutNorm.includes("clos")) ? "badge--error"
+      : statutNorm.includes("venir") ? "badge--warning"
       : "";
     const badgeLabel = col(r, "Statut") || "";
 
