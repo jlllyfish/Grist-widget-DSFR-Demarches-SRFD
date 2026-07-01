@@ -80,6 +80,7 @@
   .card-footer a { color: #000091; font-size: 1.2rem; }
 
   .empty-state { color: #666; padding: 40px; text-align: center; grid-column: 1 / -1; }
+  .empty-state-img { max-width: 180px; width: 100%; height: auto; margin-bottom: 16px; }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 768px) {
@@ -259,7 +260,7 @@ function render() {
   document.getElementById("resultsCount").textContent = filtered.length;
 
   if (filtered.length === 0) {
-    grid.innerHTML = `<div class="empty-state">Aucun résultat pour cette recherche.</div>`;
+    grid.innerHTML = `<div class="empty-state"><img src="https://i.pinimg.com/236x/cd/ce/c2/cdcec265c7323ec10d0642966f15cd0d.jpg" alt="" class="empty-state-img"><br>Aucun résultat pour cette recherche.</div>`;
     return;
   }
 
