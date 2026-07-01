@@ -12,9 +12,13 @@
   body { margin: 0; font-family: "Marianne", arial, sans-serif; background: #fff; color: #161616; }
 
   .header-band {
-    background: #E8EDFF;
+    background: #fff;
+    border-bottom: 1px solid #E5E5E5;
     padding: 24px 32px;
   }
+  .header-top { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .header-top img { height: 48px; width: auto; }
+  .header-top span { font-weight: 700; font-size: 1rem; color: #161616; }
   .header-band h1 { margin: 0 0 8px; font-size: 1.75rem; }
   .header-band p { margin: 0 0 16px; color: #3A3A3A; }
 
@@ -96,6 +100,10 @@
 <body>
 
 <div class="header-band">
+  <div class="header-top">
+    <img src="https://draaf.bretagne.agriculture.gouv.fr/local/cache-vignettes/L760xH545/maasa_blocmarque-2d9bb.svg?1775636340" alt="Logo Ministère">
+    <span>DRAAF-SRFD Occitanie</span>
+  </div>
   <h1>Catalogue des démarches et subventions</h1>
   <p>Recherchez une demande, une déclaration, une aide, un appel à projets...</p>
   <div class="search-bar">
