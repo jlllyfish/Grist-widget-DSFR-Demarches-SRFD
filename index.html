@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catalogue DSFR - Widget Grist</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.13.1/dist/dsfr.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
@@ -71,6 +72,25 @@
   .card-footer a { color: #000091; font-size: 1.2rem; }
 
   .empty-state { color: #666; padding: 40px; text-align: center; grid-column: 1 / -1; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 768px) {
+    .header-band { padding: 16px 20px; }
+    .header-band h1 { font-size: 1.35rem; }
+    .header-band p { font-size: .9rem; }
+
+    .search-bar { flex-direction: column; max-width: 100%; }
+    .search-bar button { padding: 10px 20px; justify-content: center; }
+
+    .layout { flex-direction: column; padding: 16px 20px; gap: 20px; }
+    .sidebar { width: 100%; }
+
+    .cards-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  @media (max-width: 420px) {
+    .header-band h1 { font-size: 1.15rem; }
+  }
 </style>
 </head>
 <body>
@@ -89,12 +109,12 @@
     <p class="results-count"><span id="resultsCount">0</span> résultats</p>
     <p style="font-weight:700; margin-bottom:8px;">Affinez votre recherche :</p>
 
-    <details class="filter-group" id="filterTheme" open>
+    <details class="filter-group" id="filterTheme">
       <summary>Thématique</summary>
       <div class="filter-options"></div>
     </details>
 
-    <details class="filter-group" id="filterType" open>
+    <details class="filter-group" id="filterType">
       <summary>Type de démarche</summary>
       <div class="filter-options"></div>
     </details>
